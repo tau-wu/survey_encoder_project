@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+
+        <title>Survey</title>
+    </head>
+
+    <body>
+        
+        {% if not user.is_authenticated %}
+
+        <div class="form" id="participant_div">
+            <h1>Request Key</h1>
+
+            <form id="participant_form" method="post" action="/change_this/request_key/">
+
+                {% csrf_token %}
+                {{ participant_form.as_p }}
+
+                <input type="submit" name="submit" value="Get Key" />
+            </form>
+
+        </div>
+
+        <div class="form" id="admin_div">
+            <h1>Admin Login</h1>
+
+            <form id="admin_form" method="post" action="/change_this/login/">
+
+                {% csrf_token %}
+                Username: <input type="text" name="username" value="" size="50" />
+                <br />
+                Password: <input type="password" name="password" value="" size="50" />
+                <br />
+
+                <input type="submit" name="submit" value="Login" />
+            </form>
+        </div>
+
+        <div id="access_info">
+            <p>Your access token: </p>
+            <p id="access_token">{{ request_token }}</p>
+        </div>
+
+        <div id="error_info">
+        </div>
+
+        {% endif %}
+
+        {% if user.is_authenticated %}
+
+        <div class="keys">
+            <p>Everyone who has requested a key:</p>
+            <table class="participant_display">
+                <tr>
+                    <th>Datetime</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Token</th>
+                </tr>
+                {% for participant in all_keys %}
+                <tr>
+                    <td>{{participant.0}}</td>
+                    <td>{{participant.1}}</td>
+                    <td>{{participant.2}}</td>
+                    <td>{{participant.3}}</td>
+                    <td>{{participant.4}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="logout">
+            <a href="/change_this/logout/">Logout</a>
+        </div>
+
+        {% endif %}
+
+        <script type="text/javascript" src="{% static 'js/jquery-2.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/retrieve_results.js' %}"></script>
+
+    </body>
+
+</html>
