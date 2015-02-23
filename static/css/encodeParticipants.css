@@ -1,0 +1,86 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Lato', 'Helvetica Nueue', 'Arial';
+  color: #00285B;
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+
+.page-header{
+  text-align: center;
+}
+
+.img-responsive{
+  max-width: 50%;
+}
+
+.container {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 150%;
+}
+
+.btn-custom-lighten.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-custom-lighten {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #00316f;
+  background-image: -moz-linear-gradient(top, #00285b, #003e8e);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00285b), to(#003e8e));
+  background-image: -webkit-linear-gradient(top, #00285b, #003e8e);
+  background-image: -o-linear-gradient(top, #00285b, #003e8e);
+  background-image: linear-gradient(to bottom, #00285b, #003e8e);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00285b', endColorstr='#ff003e8e', GradientType=0);
+  border-color: #003e8e #003e8e #001d42;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #003e8e;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-custom-lighten:hover,
+.btn-custom-lighten:focus,
+.btn-custom-lighten:active,
+.btn-custom-lighten.active,
+.btn-custom-lighten.disabled,
+.btn-custom-lighten[disabled] {
+  color: #ffffff;
+  background-color: #003e8e;
+  *background-color: #003375;
+}
+.btn-custom-lighten:active,
+.btn-custom-lighten.active {
+  background-color: #00285b ;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  line-height: 30px;
+  background-color: #00285B;
+  text-align: right;
+}
+
+#show_admin {
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  color: #F5F5F5;
+}
+
+#show_admin:hover {
+    color: #006FFF;
+    text-decoration: none;
+}

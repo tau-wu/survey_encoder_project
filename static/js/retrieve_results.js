@@ -1,9 +1,14 @@
 $(document).ready(function() {
-	$("#access_info").hide();
-	$("#error_info").hide();
-
 	// Variable to hold request
 	var request;
+
+	$("#show_admin").click( function() {
+		$("#participant_div").toggle(1000);
+		$("#admin_div").toggle(1000);
+		$("#access_info").hide();
+		$("#error_info").hide();
+		$("#show_admin").html("BACK");
+	});
 
 	// Bind to the submit event of our form
 	$("#participant_form").submit( function(event) {
@@ -48,7 +53,7 @@ $(document).ready(function() {
 	    request = $.ajax({
 	        data: $data,
             type: 'post',
-            url: '/change_this/request_key/'
+            url: '/request_key/'
 	    });
 
 	    // Callback handler that will be called on success
@@ -61,7 +66,7 @@ $(document).ready(function() {
 	    request.fail(function (jqXHR, textStatus, errorThrown){
 	        // Log the error
 	        $("#error_info").html("<p>" + 
-	            "The following error occurred: </p>" +
+	            "<b>The following error occurred:</b> </p>" +
 	            jqXHR.responseText );
 	        $("#error_info").fadeIn(1000).delay(4000).hide(1000);
 	    });
@@ -122,12 +127,12 @@ $(document).ready(function() {
 	    request = $.ajax({
 	        data: $data,
             type: 'post',
-            url: '/change_this/login/'
+            url: '/login/'
 	    });
 
 	    // Callback handler that will be called on success
 	    request.done(function (response, textStatus, jqXHR){
-	        window.location.replace("/change_this/");
+	        window.location.replace("/key/");
 	    });
 
 	    // Callback handler that will be called on failure

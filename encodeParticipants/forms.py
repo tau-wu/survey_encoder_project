@@ -5,7 +5,7 @@ from encodeParticipants.models import Participant
 
 class ParticipantForm(forms.ModelForm):
 	token = forms.CharField( widget = forms.HiddenInput(), initial = "hi" )
-	role = forms.ChoiceField( ( ('T', 'Teacher'), ('P' , 'Parent' ) ), help_text = "Are you a teacher or parent?" )
+	role = forms.ChoiceField( ( ('T', 'Teacher'), ('P' , 'Parent' ) ))
 	name = forms.CharField( max_length = 128 )
 	email = forms.EmailField( )
 

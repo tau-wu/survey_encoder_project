@@ -53,7 +53,7 @@ def request_key(request):
 			response.write( error_message )
 			return response
 
-	return HttpResponseRedirect('/change_this/')
+	return HttpResponseRedirect('/key/')
 
 @ensure_csrf_cookie
 def admin_login( request ):
@@ -73,8 +73,15 @@ def admin_login( request ):
 		else:
 			return HttpResponseBadRequest( "Invalid login details supplied." )
 	
-	return HttpResponseRedirect('/change_this/')
+	return HttpResponseRedirect('/key/')
 
 def admin_logout( request ):
 	logout (request)
-	return HttpResponseRedirect('/change_this/')
+	return HttpResponseRedirect('/key/')
+
+def not_found( request ):
+	context = RequestContext(request)
+	return render_to_response('encodeParticipants/404.html', {}, context)
+
+def redirect_home( request ):
+	return HttpResponseRedirect('/key/')
