@@ -22,7 +22,7 @@ STATIC_PATH = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'h=_c&ynmp$^iv2f#ai2xlqavp%^v06t318q382_u5@c=wd1@!o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
