@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 html {
   position: relative;
   min-height: 100%;
@@ -5,7 +7,7 @@ html {
 
 body {
   font-family: 'Lato', 'Helvetica Nueue', 'Arial';
-  color: #00285B;
+  background: url("{% static 'img/mississauga-medicine.png' %}") !important;
   /* Margin bottom by footer height */
   margin-bottom: 30px;
 }
