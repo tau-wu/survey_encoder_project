@@ -42,7 +42,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Image and Database
-.db
-.ico
-.png
+# Database
+*.db
