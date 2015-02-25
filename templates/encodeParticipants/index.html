@@ -28,8 +28,8 @@
     <body>
         
         <div class="page-header">
-            <img class="img-responsive" src="{% static 'img/EHPH logo.png' %}">
             <img class="img-responsive" src="{% static 'img/mississauga medicine.png' %}">
+            <img class="img-responsive" src="{% static 'img/EHPH logo.png' %}">
         </div>
 
         {% if not user.is_authenticated %}
@@ -46,6 +46,7 @@
 
             <br><hr>
             <p align="justify">This website is part of a research study run by the University of Toronto Faculty of Medicine in collaboration with Epilepsy Halton Peel Hamilton. If you have reached this site for any other reason than participating in the study, please do not complete this form. Please direct any inquiries to <a href="mailto:shara.nauth@mail.utoronto.ca">Shara Nauth</a>.</p>
+            <hr><br>
         </div>
 
         <div class="container" id="admin_div">
@@ -64,7 +65,7 @@
         </div>
 
         <div class="alert alert-success" id="access_info">
-            <p>YOUR ACCESS TOKEN: </p>
+            <h3>YOUR ACCESS TOKEN: </h3>
             <p id="access_token">{{ request_token }}</p>
         </div>
 
