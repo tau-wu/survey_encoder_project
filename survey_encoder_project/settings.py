@@ -26,7 +26,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['www.enphschoolstudy.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
