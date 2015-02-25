@@ -26,7 +26,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['tauwu.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.enphschoolstudy.com']
 
 
 # Application definition
